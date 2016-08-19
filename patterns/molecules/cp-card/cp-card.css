@@ -1,0 +1,25 @@
+:host {
+  display: block;
+  padding: 30px;
+  background: #f7f7f7; }
+
+:host([color="red"]) {
+  background: #c00;
+  color: #fff; }
+
+:host([color="blue"]) {
+  background: #0088ce;
+  color: #fff; }
+
+:host([size="small"]) {
+  padding: 15px; }
+
+.card-heading,
+::content.card-heading {
+  margin-top: 0;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 600; }
+
+:host ::content:last-child {
+  margin-bottom: 0; }

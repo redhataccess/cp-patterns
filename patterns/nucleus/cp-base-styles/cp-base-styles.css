@@ -466,7 +466,18 @@ body {
   font-family: 'Overpass', Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5em;
-  color: #1a1a1a; }
+  color: #1a1a1a;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased; }
+
+a:link, a:visited {
+  color: #0088ce; }
+
+a:hover, a:focus {
+  color: #005582;
+  text-decoration: none; }
 
 h1 {
   font-size: 3em;

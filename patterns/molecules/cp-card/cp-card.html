@@ -1,0 +1,15 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="stylesheet" href="../../nucleus/cp-base-styles/cp-base-styles.css">
+
+<dom-module id="cp-card">
+    <link rel="import" type="css" href="cp-card.css">
+    
+    <template>
+    	<template is="dom-if" if="[[heading]]">
+      		<h2 class="card-heading">[[heading]]</h2>
+    	</template>
+    	<content></content>
+    </template>
+
+    <script src="cp-card.js"></script>
+</dom-module>

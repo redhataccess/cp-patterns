@@ -1,0 +1,84 @@
+$text_color:              	#1a1a1a;    // primary default text color, since it has higher contrast and looks sharper.
+$next_text_color:         	#646464; // reserving for other uses.
+
+// Primary Brand Colors
+$brand_red:               	#cc0000; // Corporate/Tech Colors
+$brand_red_dark:          	#a30000;
+$brand_red_darker:        	#820000;
+
+$brand_orange_dark:       	#ec7a08; // Storage Colors
+$brand_orange:            	#f0ab00; // Behavior had this at #f4aa00
+
+$brand_blue_dark:         	#0088ce; // Infrastructure Colors, Behavior had this at #0085cf
+$brand_blue:              	#00b9e4; // Behavior had this at #00a8e1
+
+$brand_green_dark:			#3f9c35; // App Development Colors
+$brand_green:             	#92d400;
+
+$brand_grey_dark:         	#37424a; // Service Colors, Behavior had this at #59666e. Simplifying with Brand's Slate Dark
+$brand_grey:              	#7a858b; // Sublty lighter than Brand Slate.
+
+
+// Secondary Brand Colors
+$brand_navy:              	#004153; // Brand has this at #004153, but the guidelines from Behavior have #004054. Going with Brand.
+$brand_navy_light:        	#005172;
+$brand_blue_grey:         	$brand_grey_dark; // Alias. Dark Slate
+$brand_slate_dark:        	$brand_grey_dark; // Alias.
+$brand_slate:             	#5e6a71; // Slate
+$brand_grey_light:			#d1d4d3;
+$brand_powder_blue:			#cae3e9;
+
+$brand_purple:            	#564979; // We have purple!?! Use sparingly.
+$brand_teal:              	#007a87;
+$brand_sky:               	#a3dbe8;
+$brand_blue_light:			#bee0f4; // From Containers page
+$brand_blue_semi:         	#92cbed; // From Containers page
+
+$next_bright_blue:			#08c0fc;
+$accent_blue:             	$next_bright_blue; // Alias.
+
+
+// Nimbus Colors - Specific to Nimbus.
+$next_link_color:         	$next_bright_blue; // Deprecated.
+$nav_title_color:         	$next_bright_blue; // Used in titles in mega menu or on dark backgrounds.
+
+$nimbus_link_color:			$brand_blue_dark; // More contrast than Next's link color.
+$umbra_link_color:			$brand_blue_dark; // Legacy use only! Used to be #06c;
+
+$frost_blue:              	#eaf3f5; // Goes with Brand's Powder Blue
+
+
+// Web Property Colors
+$headline_grey:           	#252527;
+
+$body_black:              	#1a1a1a;
+$body_grey:               	#4c4c4c;
+$body_grey_alt:           	$next_text_color;
+
+$trim_grey:               	#8d8d8d;
+$trim_grey_light:         	#d2d3d4;
+$accent_grey:             	$trim_grey; // Alias.
+$accent_grey_light:			$trim_grey_light; // Alias.
+
+$page_grey_light:         	#f0f0f0;
+$table_grey_light:		  	#f7f7f7;
+$zebra:                   	$table_grey_light; // Alias.
+$border_color:            	#ececec;
+$border_color_dark:       	$trim_grey_light;
+
+// Links
+$link_text_decoration:    	none;
+$link_color:              	$nimbus_link_color; // Assigning Nimbus' color, not Next's due to contrast issues.
+$link_color_hover:			darken($link_color, 15%);
+
+$url_link_color:			#36842d;
+$url_link_color_hover:		darken($url_link_color, 15%);
+
+
+// Alternate Colors, more aliases.
+$dark_grey:               	$headline_grey; // Alias
+$blue_grey:               	$brand_blue_grey; // Alias
+$medium_grey:             	$body_grey; // Alias
+
+// Breadcrumbs
+$breadcrumbs_background:  	#e0e0e0; // Unique to Nimbus.
