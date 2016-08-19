@@ -1,0 +1,39 @@
+:host {
+	display: inline-block;
+
+	.btn {
+		padding: 9px 40px;
+		background-color: #c00;
+		color: #fff;
+		border: 1px solid #c00;
+		text-decoration: none;
+		text-transform: uppercase;
+		white-space: normal;
+		word-wrap: break-word;
+		font-weight: 600;
+		line-height: 20px;
+		font-size: 14px;
+		border-radius: 0;
+
+		-webkit-transition-duration: 0.4s;
+		transition-duration: 0.4s;
+		transition-property: background;
+
+
+			&,
+			&:link,
+			&:visited {
+				color: #fff;
+			}
+
+			&:hover,
+			&:focus {
+				color: #fff;
+				background: darken(#c00, 5);
+				border-color: darken(#c00, 5);
+			}
+
+	}
+
+
+}
