@@ -1,24 +1,26 @@
 :host {
-  display: inline-block; }
-  :host .btn {
-    padding: 9px 40px;
-    background-color: #c00;
+  display: block; }
+
+::content .btn {
+  display: inline-block;
+  padding: 9px 40px;
+  background-color: #c00;
+  color: #fff;
+  border: 1px solid #c00;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: normal;
+  word-wrap: break-word;
+  font-weight: 600;
+  line-height: 20px;
+  font-size: 14px;
+  border-radius: 0;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  transition-property: background; }
+  ::content .btn, ::content .btn:link, ::content .btn:visited {
+    color: #fff; }
+  ::content .btn:hover, ::content .btn:focus {
     color: #fff;
-    border: 1px solid #c00;
-    text-decoration: none;
-    text-transform: uppercase;
-    white-space: normal;
-    word-wrap: break-word;
-    font-weight: 600;
-    line-height: 20px;
-    font-size: 14px;
-    border-radius: 0;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-    transition-property: background; }
-    :host .btn, :host .btn:link, :host .btn:visited {
-      color: #fff; }
-    :host .btn:hover, :host .btn:focus {
-      color: #fff;
-      background: #b30000;
-      border-color: #b30000; }
+    background: #b30000;
+    border-color: #b30000; }

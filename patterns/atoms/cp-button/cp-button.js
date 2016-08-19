@@ -3,9 +3,9 @@ Polymer({
     is: 'cp-button',
 
     properties: {
-        title: {
+        link: {
             type: String,
-            value: 'Awesomeness',
+            value: '#',
         },
     }
 
