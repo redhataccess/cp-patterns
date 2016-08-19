@@ -1,0 +1,23 @@
+{
+  "name": "cp-patterns",
+  "version": "1.0.0",
+  "description": "Customer Portal Web Component Pattern Library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redhataccess/cp-patterns.git"
+  },
+  "author": "Red Hat Customer Portal",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/redhataccess/cp-patterns/issues"
+  },
+  "homepage": "https://github.com/redhataccess/cp-patterns#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2"
+  }
+}

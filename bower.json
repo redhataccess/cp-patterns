@@ -1,0 +1,26 @@
+{
+  "name": "cp-patterns",
+  "description": "Customer Portal Web Component Pattern Library",
+  "main": "index.js",
+  "authors": [
+    "Red Hat Customer Portal"
+  ],
+  "license": "GPL-3.0",
+  "homepage": "https://github.com/redhataccess/cp-patterns",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "^1.6.1",
+    "webcomponentsjs": "^0.7.22",
+    "overpass": "*",
+    "rh-iconfont": "git://gitolite.corp.redhat.com/it-web/rh-iconfont.git#1.0.0"
+  },
+  "devDependencies": {
+    "web-component-tester": "^4.3.1"
+  }
+}
