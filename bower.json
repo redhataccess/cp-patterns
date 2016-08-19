@@ -21,6 +21,9 @@
     "rh-iconfont": "git://gitolite.corp.redhat.com/it-web/rh-iconfont.git#1.0.0"
   },
   "devDependencies": {
-    "web-component-tester": "^4.3.1"
+    "web-component-tester": "^4.3.1",
+    "bourbon": "^4.2.7",
+    "neat": "^1.8.0",
+    "normalize-css": "normalize.css#^4.2.0"
   }
 }
