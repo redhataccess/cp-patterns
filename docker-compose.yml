@@ -7,7 +7,6 @@ services:
     entrypoint: /bin/bash
     volumes:
       - ./:/var/www/html
-      - ../pattern-kit:/var/www/html/vendor/pattern-builder/pattern-kit
       - ./docker/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
 
   # Pattern library app server container.
