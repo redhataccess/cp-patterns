@@ -1,0 +1,21 @@
+{
+    "name": "it-marketing/webrh",
+    "authors": [
+        {
+            "name": "Red Hat IT Marketing",
+            "email": "it-marketing-tower@redhat.com"
+        }
+    ],
+    "require": {
+        "pattern-builder/pattern-kit": "^1.3"
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../pattern-kit"
+        }
+    ]
+}

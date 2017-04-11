@@ -1,0 +1,214 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "<%= props.name %>",
+    "description": "",
+    "type": "object",
+    "category": "<%= props.type %>",
+    "format": "grid",
+    "properties": {
+        "name": {
+            "type": "string",
+            "enum": ["<%= props.name_underscore %>"],
+            "options": {
+                "hidden": true
+            }
+        }<% props.template_pattern_elements.forEach( function( element, idx ) { %>,<% if ( element == 'config' ) { %>
+        "config": {
+            "type": "object",
+            "options": {
+                "grid_columns": 12
+            },
+            "properties": {<% props.pattern_config_options.forEach( function( property, idx ) { if ( idx > 0 ) { %>,<% } if( property == 'align' ) { %>
+                "align": {
+                    "title": "Alignment",
+                    "type": "string",
+                    "enum": [ "left", "right", "center" ],
+                    "options": {
+                        "grid_columns": 4
+                    }
+                }<% } else if (property == 'theme') { %>
+                "theme": {
+                    "title": "Theme",
+                    "description": "Select dark theme when using a dark background",
+                    "type": "string",
+                    "enum": [ "light", "dark" ],
+                    "default": "light"
+                }<% } else if (property == 'layout') { %>
+                "layout": {
+                    "title": "Layout",
+                    "description": "Identify layout as an expression of a 12 grid layout (i.e., 6 6 or 8 4).",
+                    "type": "string",
+                    "default": "12",
+                    "options": {
+                        "hidden": true
+                    }
+                }<% } } ); %>
+            },
+            "required": []
+        }<% } else if ( element == 'background' ) { %>
+        "background": {
+            "title": "Background options",
+            "type": "object",
+            "format": "grid",
+            "properties": {
+                "color": {
+                    "title": "Background color",
+                    "type": "string",
+                    "enum": [ "white", "gray", "black", "rich-black", "transparent" ],
+                    "default": "white"
+                },
+                "image_large": {
+                    "title": "Large screen background image",
+                    "entity": "image",
+                    "type": "object",
+                    "properties": {
+                        "src": {
+                            "type": "string",
+                            "format": "url"
+                        }
+                    }
+                },
+                "image_small": {
+                    "title": "Small screen background image",
+                    "entity": "image",
+                    "type": "object",
+                    "properties": {
+                        "src": {
+                            "type": "string",
+                            "format": "url"
+                        }
+                    }
+                }
+            }
+        }<% } else if ( element == 'header' ) { %>
+        "header": {
+            "title": "Header",
+            "type": "object",
+            "properties": {
+                "title": {
+                    "title": "Title",
+                    "type": "string",
+                    "options": {
+                        "preview": true
+                    }
+                },
+                "headline": {
+                    "title": "Headline",
+                    "type": "string",
+                    "options": {
+                        "preview": true
+                    }
+                },
+                "summary": {
+                    "title": "Summary",
+                    "description": "Allowed tags: &lt;a&gt;&lt;br&gt;",
+                    "type": "string",
+                    "format": "html"
+                }
+            }
+        }<% } else if ( element == 'body' ) { %>
+        "body": {
+            "title": "Body",
+            "type": "object",
+            "properties": {
+                "layout": {
+                    "title": "Layout",
+                    "description": "Select a layout if you are not using a sidebar pattern. Each band is 12 columns so '6 6' means 2 equal columns, '4 4 4' is 3 equal columns. Stacked means no layout, but provides vertical spacing",
+                    "type": "string",
+                    "enum": ["stacked", "gallery2", "gallery3", "gallery4", "gallery5", "8 4", "4 8", "9 3", "3 9"],
+                    "default": "stacked"
+                },
+                "sub_patterns": {
+                    "title": "Body patterns",
+                    "type": "array",
+                    "items": {
+                        "oneOf": [{
+                            "$ref": "raw_html.json"
+                        }, {
+                            "$ref": "standard_text.json"
+                        }]
+                    }
+                },
+                "required": ["sub_patterns"]
+        }<% } else if ( element == 'aside' ) { %>
+        "aside": {
+            "title": "Optional aside",
+            "type": "object",
+            "options": {
+                "collapsed": true
+            },
+            "properties": {
+                "sub_patterns": {
+                    "maxItems": "1",
+                    "type": "array",
+                    "title": "Aside patterns",
+                    "items": {
+                        "oneOf": [{
+                            "$ref": "raw_html.json"
+                        }, {
+                            "$ref": "standard_text.json"
+                        }]
+                    }
+                }
+            }
+        }<% } else if ( element == 'footer' ) { %>
+        "footer": {
+            "title": "Optional footer",
+            "type": "object",
+            "options": {
+                "collapsed": true
+            },
+            "properties": {
+                "sub_patterns": {
+                    "type": "array",
+                    "title": "Footer patterns",
+                    "items": {
+                        "oneOf": [{
+                            "$ref": "cta.json"
+                        }, {
+                            "$ref": "footnote.json"
+                        }]
+                    }
+                }
+            }
+        }<% } else if ( element == 'cta' ) { %>
+        "cta": {
+            "title": "Optional CTA",
+            "type": "object",
+            "options": {
+                "collapsed": true
+            },
+            "properties": {
+                "type": {
+                    "title": "CTA type",
+                    "type": "string",
+                    "enum": ["primary", "secondary"],
+                    "default": "secondary"
+                },
+                "link": {
+                    "$ref": "link.json"
+                }
+            }
+        }<% } } );  props.custom_elements_underscore.forEach( function( element ) { var type = eval( 'props.custom_' + element.replace('_', '-') + '_type' ); %>,
+        "<%= element %>": {
+            "title": "<%= element.charAt( 0 ).toUpperCase() + element.slice(1).replace('_',' ') %>",
+            "description": "",
+            "type": "<%= type %>"<% if ( type == 'object' ) { %>,
+            "format": "grid",
+            "properties": {},
+            "required": []<% } else if ( type == 'array' ) { %>,
+            "minItems": 1,
+            "maxItems": 10,
+            "items": {
+                "oneOf": [{
+                    "$ref": "raw.json"
+                }]
+            }<% } else if ( type == 'string' ) { %>,
+            "enum": [],
+            "default": ""<% } else if ( type == 'boolean' ) { %>,
+            "default": false<% } %>
+        }<% } ); %>
+    },
+    "required": ["name"],
+    "additionalProperties": false
+}

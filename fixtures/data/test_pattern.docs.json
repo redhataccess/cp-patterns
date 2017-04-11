@@ -1,0 +1,57 @@
+{
+  "name": "test_component",
+  "string": "this is a string",
+  "string_with_single_enum": "a",
+  "string_with_default": "This is the default",
+  "array_of_strings": [
+    "array of string 1",
+    "array of string 2"
+  ],
+  "array_with_object_items": [
+    {
+      "foo": "item 1 foo",
+      "bar": 325,
+      "baz": true
+    },
+    {
+      "foo": "item 2 foo",
+      "bar": 11414141,
+      "baz": false
+    }
+  ],
+  "object_with_subitems": {
+    "foo": "This is foo",
+    "bar": 42,
+    "baz": false
+  },
+  "object_with_object_subitems": {
+    "foo": {
+      "baz": "Foo.Baz"
+    },
+    "bar": {
+      "baz": "Bar.Baz"
+    }
+  },
+  "link_atom": {
+    "href": "http://www.redhat.com/en",
+    "title": "My Title",
+    "text": "My Text",
+    "target": "_blank"
+  },
+  "image_atom": {
+    "src": "http://www.fillmurray.com/460/300",
+    "alt": "Image Alt Tag"
+  },
+  "video_atom": {
+    "video_src": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/SJ1cKkP4hcw\" frameborder=\"0\" allowfullscreen></iframe>"
+  },
+  "boolean": true,
+  "array_with_oneOf": [
+    4,
+    2
+  ],
+  "array_with_anyOf": [
+    1,
+    2
+  ]
+}

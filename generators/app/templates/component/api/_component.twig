@@ -1,0 +1,10 @@
+<div class="rh-<%= props.name_dash %>--component"<% props.template_component_elements.forEach( function( element ) { if( element == 'align' ) { %>
+    data-rh-align="{{ config.align }}"<% } else if( element == 'size' ){ %>
+    data-rh-size="{{ config.size }}"<% } }); %>><% props.template_component_elements.forEach( function( element ) { if ( element != 'config' ) { %>
+        <div class="rh-<%= props.name_dash %>-<%= element %>">
+            {{ <%= element %> }}
+        </div><% } }); for (var element in props.custom_elements_dash) { var type = props.custom_elements_dash[element]; %>
+        <div class="rh-<%= props.name_dash %>-<%= element %>">
+            {{ <%= element.replace(/-/g,"_") %> }}
+        </div><% } %>
+</div>
