@@ -1170,18 +1170,12 @@
     },
     {
         "name": "pattern-builder/pattern-kit",
-        "version": "1.3.0",
-        "version_normalized": "1.3.0.0",
+        "version": "dev-feature/jassmith/Modifications",
+        "version_normalized": "dev-feature/jassmith/Modifications",
         "source": {
             "type": "git",
-            "url": "https://github.com/PatternBuilder/pattern-kit.git",
-            "reference": "11c16187a370d28000d8a08f0f71b2874fe948eb"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/PatternBuilder/pattern-kit/zipball/11c16187a370d28000d8a08f0f71b2874fe948eb",
-            "reference": "11c16187a370d28000d8a08f0f71b2874fe948eb",
-            "shasum": ""
+            "url": "https://github.com/SiliconValet/pattern-kit.git",
+            "reference": "0a6e9c4467601ddb20ffe01606df196f0c2869e5"
         },
         "require": {
             "deralex/yaml-config-service-provider": "@dev",
@@ -1197,15 +1191,14 @@
             "symfony/yaml": "=2.6.13",
             "twig/twig": "1.24.*"
         },
-        "time": "2017-03-14T13:28:17+00:00",
+        "time": "2017-04-13T17:19:02+00:00",
         "type": "library",
-        "installation-source": "dist",
+        "installation-source": "source",
         "autoload": {
             "psr-0": {
                 "PatternKit\\": "src"
             }
         },
-        "notification-url": "https://packagist.org/downloads/",
         "license": [
             "MIT"
         ],

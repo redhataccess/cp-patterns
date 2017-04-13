@@ -1,21 +1,21 @@
 {
-    "name": "it-marketing/webrh",
+    "name": "customer-portal/cp-patterns",
     "authors": [
         {
-            "name": "Red Hat IT Marketing",
-            "email": "it-marketing-tower@redhat.com"
+            "name": "Red Hat CP FED",
+            "email": "cpfed@redhat.com"
         }
     ],
     "require": {
-        "pattern-builder/pattern-kit": "^1.3"
+        "pattern-builder/pattern-kit": "dev-feature/jassmith/Modifications"
     },
     "config": {
         "preferred-install": "dist"
     },
     "repositories": [
         {
-            "type": "path",
-            "url": "../pattern-kit"
+            "type": "git",
+            "url": "https://github.com/SiliconValet/pattern-kit.git"
         }
     ]
 }
