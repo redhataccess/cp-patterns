@@ -33,6 +33,7 @@ module.exports = function (grunt) {
     grunt.registerTask('default', [
         'clean', // files
         'copy:templates', // files
+        'copy:data', // files
         'copy:schemas', // files
         'copy:images', // files
         'jsonlint', // js

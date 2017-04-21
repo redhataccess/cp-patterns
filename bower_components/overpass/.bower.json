@@ -1,0 +1,24 @@
+{
+  "name": "overpass",
+  "homepage": "http://overpassfont.org/",
+  "authors": [
+    "Delve Fonts",
+    "Red Hat"
+  ],
+  "description": "Overpass — an open source web font family",
+  "main": "Webfonts/recommended.css",
+  "keywords": [
+    "font",
+    "overpath"
+  ],
+  "license": "SIL",
+  "_release": "2.1",
+  "_resolution": {
+    "type": "tag",
+    "tag": "2.1",
+    "commit": "c1623d245ee216fb505e8a10a6bde91968caf0f5"
+  },
+  "_source": "https://github.com/RedHatBrand/overpass.git",
+  "_target": "2.1",
+  "_originalSource": "overpass"
+}

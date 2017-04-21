@@ -1,0 +1,30 @@
+{
+  "name": "rh-iconfont",
+  "version": "1.0.1",
+  "authors": [
+    "Red Hat IT Marketing <it-marketing-tower@redhat.com>"
+  ],
+  "description": "The Red Hat Icon Font",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "src",
+    "grunt_tasks",
+    "Gruntfile.js",
+    "package.json"
+  ],
+  "_release": "1.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.0.1",
+    "commit": "83515862b60b255327f5409fb25e4da06b9f0143"
+  },
+  "_source": "https://gitlab.it-mkt.corpdev.redhat.com/it-marketing/rh-iconfont.git",
+  "_target": "*",
+  "_originalSource": "https://gitlab.it-mkt.corpdev.redhat.com/it-marketing/rh-iconfont.git"
+}
