@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'Overpass';
+  src: url("/bower_components/overpass/Webfonts/Overpass-Bold.eot");
+  src: url("/bower_components/overpass/Webfonts/Overpass-Bold.eot?#iefix") format("embedded-opentype"), url("/bower_components/overpass/Webfonts/Overpass-Bold.woff") format("woff"), url("/bower_components/overpass/Webfonts/Overpass-Bold.ttf") format("truetype"), url("/bower_components/overpass/Webfonts/Overpass-Bold.svg#Overpass-Bold") format("svg");
+  font-style: "normal";
+  font-weight: 800;
+  text-rendering: optimizeLegibility
+}
+@font-face {
+  font-family: 'Overpass';
+  src: url("/bower_components/overpass/Webfonts/Overpass-Regular.eot");
+  src: url("/bower_components/overpass/Webfonts/Overpass-Regular.eot?#iefix") format("embedded-opentype"), url("/bower_components/overpass/Webfonts/Overpass-Regular.woff") format("woff"), url("/bower_components/overpass/Webfonts/Overpass-Regular.ttf") format("truetype"), url("/bower_components/overpass/Webfonts/Overpass-Regular.svg#Overpass-Regular") format("svg");
+  font-style: "normal";
+  font-weight: 600;
+  text-rendering: optimizeLegibility
+}
+@font-face {
+  font-family: 'Overpass';
+  src: url("/bower_components/overpass/Webfonts/Overpass-Light.eot");
+  src: url("/bower_components/overpass/Webfonts/Overpass-Light.eot?#iefix") format("embedded-opentype"), url("/bower_components/overpass/Webfonts/Overpass-Light.woff") format("woff"), url("/bower_components/overpass/Webfonts/Overpass-Light.ttf") format("truetype"), url("/bower_components/overpass/Webfonts/Overpass-Light.svg#Overpass-Light") format("svg");
+  font-style: "normal";
+  font-weight: 400;
+  text-rendering: optimizeLegibility
+}
+body {
+  font-size: 18px;
+}

@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "category": "atom",
+    "title": "CP Button",
+    "entity": "cp_button",
+    "type": "object",
+    "properties": {
+        "href": {
+            "title":   "Link URL",
+            "type":    "string",
+            "format":  "url"
+        }
+    }
+}

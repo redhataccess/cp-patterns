@@ -1,0 +1,23 @@
+version: '2'
+services:
+  # Persistent filesystem for Patternkit.
+  patternkitfs:
+    # Make sure the image matches the FROM in drupal Dockerfile for efficiency.
+    image: php
+    entrypoint: /bin/bash
+    volumes:
+      - ./:/var/www/html
+      - ./docker/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+
+  # Pattern library app server container.
+  patternkit:
+    container_name: patternkit
+    build:
+      context: ./
+      dockerfile: ./docker/Dockerfile
+    volumes_from:
+      - patternkitfs
+    environment:
+      XDEBUG_CONFIG: remote_host=10.254.254.254
+    ports:
+      - "8080:80"

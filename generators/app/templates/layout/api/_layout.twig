@@ -1,0 +1,44 @@
+<% if( props.template_layout_elements.includes('background') || props.layout_config_options.length > 0 ){ %>{% set <%= props.name_underscore %>_props %}
+    <% if( props.template_layout_elements.includes('background') ){ %>{% if background.color %} data-rh-band-background="{{ background.color }}" {% endif %}
+    {% if background.image_large.src %}data-rh-bq="{{ background.image_large.src }}{% if background.image_small.src %}, {{ background.image_small.src }}{% endif %}"{% endif %}
+    {% if background.isFixed %} data-rh-background-fixed{% endif %}
+    {% if background.align %} data-rh-background-align="{{ background.align }}"{% endif %}
+    <% } if( props.layout_config_options.includes('collapse') ){ %>{% if config.collapse %} data-rh-<%= props.name_dash %>-collapse="{{ config.collapse }}"{% endif %}
+    <% } if( props.layout_config_options.includes('eqpts') ){ %>{% if config.eqpts -%} data-eq-pts="{{ config.eqpts }}"{% else %}data-eq-pts="small-card: 0, medium-card: 220"{% endif -%}
+    <% } if( props.layout_config_options.includes('justify') ){ %>{% if config.justify -%} data-rh-justify="{{ config.justify }}" {%- endif -%}<% }%>
+{% endset %}<% } %>
+
+<% if( props.layout_config_options.includes('vertical_spacing') ){ %>{% set <%= props.name_underscore %>_main %}
+    {% if config.vertical_spacing %} data-rh-layout="{{ config.vertical_spacing }}"{% endif %}
+{% endset %}<% } %>
+
+<% if( props.template_layout_elements.includes('aside') ){ %>{% set <%= props.name_underscore %>_container %}
+    {% if aside.content is iterable or block('aside') is not empty %} data-rh-layout="8 4"{% endif %}
+{% endset %}<% } %>
+
+<% if( props.template_layout_elements.includes('header') ){ %>{% set <%= props.name_underscore %>_header %}
+    {% if header.layout %} data-rh-layout="{{ header.layout }}"{% endif %}
+    {% if header.theme %} data-rh-theme="{{ header.theme }}"{% endif %}
+{% endset %}<% } %>
+
+<% if( props.template_layout_elements.includes('body') ){ %>{% set <%= props.name_underscore %>_body %}
+    {% if body.layout %} data-rh-layout="{{ body.layout }}"{% endif %}
+    {% if body.theme %} data-rh-theme="{{ body.theme }}"{% endif %}
+{% endset %}<% } %>
+
+<% if( props.template_layout_elements.includes('footer') ){ %>{% set <%= props.name_underscore %>_footer %}
+    {% if footer.layout %} data-rh-layout="{{ footer.layout }}"{% endif %}
+    {% if footer.theme %} data-rh-theme="{{ footer.theme }}"{% endif %}
+{% endset %}<% } %>
+
+<div class="rh-<%= props.name_dash %>" <% if( props.template_layout_elements.length > 0 ) { %>{{ <%= props.name_underscore %>_props }}<% } %>>
+    <div class="rh-<%= props.name_dash %>-container">
+        <section class="rh-<%= props.name_dash %>-main" <% if( props.template_layout_elements.length > 0 ) { %>{{ <%= props.name_underscore %>_main }}<% } %>>
+            <% for( var element in props.custom_elements_dash ) { %>
+                <div class="rh-<%= props.name_dash %>-<%= element %>">
+                    {{<%= element.replace(/-/g,"_") %>}}
+                </div>
+            <% } %>
+        </section>
+    </div>
+</div>

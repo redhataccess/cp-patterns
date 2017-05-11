@@ -2,28 +2,31 @@
   "name": "cp-patterns",
   "description": "Customer Portal Web Component Pattern Library",
   "main": "index.js",
-  "authors": [
-    "Red Hat Customer Portal"
-  ],
-  "license": "GPL-3.0",
-  "homepage": "https://github.com/redhataccess/cp-patterns",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "polymer": "^1.6.1",
-    "webcomponentsjs": "^0.7.22",
-    "overpass": "*",
-    "rh-iconfont": "git://gitolite.corp.redhat.com/it-web/rh-iconfont.git#1.0.0"
-  },
-  "devDependencies": {
-    "web-component-tester": "^4.3.1",
-    "bourbon": "^4.2.7",
-    "neat": "^1.8.0",
-    "normalize-css": "normalize.css#^4.2.0"
-  }
+    "version": "1.15.0",
+    "authors": [
+        "Red Hat IT Marketing <it-marketing-tower@redhat.com>"
+    ],
+    "license": "MIT",
+    "private": true,
+    "main": [
+        "dist/css/webrh.css",
+        "dist/js/webrh.js"
+    ],
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests",
+        "dist/styleguide"
+    ],
+    "dependencies": {
+        "rh-iconfont": "https://gitlab.it-mkt.corpdev.redhat.com/it-marketing/rh-iconfont.git"
+    },
+    "devDependencies": {
+        "compass-breakpoint": "~2.5.0",
+        "eq.js": "~1.5.0",
+        "overpass": "2.1",
+        "slick-carousel": "^1.6.0"
+    }
 }

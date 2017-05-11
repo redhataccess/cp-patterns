@@ -1,0 +1,46 @@
+title: WebRH Schema Editor
+
+paths:
+  sg:
+    - src/docs
+  test_data:
+    - dist/library/data
+  data:
+    - dist/library/data
+  schemas:
+    - dist/library/schemas
+  templates:
+    - dist/library/templates
+    - bower_components/rh-iconfont/dist/files
+    - bower_components/rh-iconfont/dist/svg
+    - fixtures/templates
+  docs:
+    - dist/library/docs
+extensions:
+  data: .docs.json
+  test_data: .tests.json
+  schemas: .json
+  templates: .twig
+  sg: .md
+  docs: .docs.md
+categories:
+    - Pattern
+    - Sub Pattern
+    - Layout
+    - Component
+    - Atom
+assets:
+  css:
+    - /dist/css/webrh.css
+    - /fixtures/css/redhat.css
+    - /bower_components/rh-iconfont/dist/files/rh-iconfont.css
+    - /bower_components/rh-iconfont/dist/files/rh-web-iconfont.css
+    - //cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css
+  js:
+    - /dist/js/modernizr-custom.js
+    - http://code.jquery.com/jquery-1.11.3.min.js
+    - /dist/js/webrh.vendor.js
+    - /dist/js/webrh.js
+  footer_js:
+    - //localhost:1336/livereload.js
+

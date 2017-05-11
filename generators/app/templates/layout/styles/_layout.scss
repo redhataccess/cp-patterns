@@ -1,0 +1,6 @@
+.rh-<%= props.name_dash %> {
+    &-container {}
+    &-main {}<% props.template_layout_elements.forEach( function( element ) { if( element != 'config') { %>
+    &-<%= element %> {}<% } }); %><% for (var element in props.custom_elements_dash) { var type = props.custom_elements_dash[element]; if(type == 'string' || type == 'number') { %>
+    &-<%= element %> {}<% } } %>
+}

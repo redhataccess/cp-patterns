@@ -1,0 +1,37 @@
+{#
+  Available Variables
+-----------------------<% props.template_pattern_elements.forEach( function( element, idx) { %>
+{{ <%= element %> }}<% }); for( var element in props.custom_elements_dash ) { %>
+{{<%= element.replace(/-/g,'_') %>}}<% } %>
+#}
+
+{% embed 'band.twig' with {
+  "global": _context<% if( props.template_pattern_elements.includes('background') ){ %>,
+  "background": {
+    "color": background.color,
+    "image_large": {
+      "src": background.image_large.src
+    },
+    "image_small": {
+      "src": background.image_small.src
+    },
+    "isFixed": background.isFixed
+  }<% } if( props.template_pattern_elements.includes('header') ){ %>,
+  "header": {
+    "theme": header.theme
+  }<% } if( props.template_pattern_elements.includes('body') ){ %>,
+  "body": {
+    "layout": body.layout,
+    "theme": body.theme
+  }<% } if( props.template_pattern_elements.includes('footer') ){ %>,
+  "footer": {
+    "theme": footer.theme
+  }<% } %>
+} only %}
+<% props.template_pattern_elements.forEach( function( object, idx ) { if ( object != 'config' || object != 'background' || object != 'cta') { %>
+  {# <%= object.toUpperCase() %> #}
+  {% block <%= object %> %}
+  {% endblock %}
+<% } }); %>
+
+{% endembed %}
