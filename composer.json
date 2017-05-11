@@ -1,0 +1,21 @@
+{
+    "name": "customer-portal/cp-patterns",
+    "authors": [
+        {
+            "name": "Red Hat CP FED",
+            "email": "cpfed@redhat.com"
+        }
+    ],
+    "require": {
+        "pattern-builder/pattern-kit": "dev-feature/jassmith/Modifications"
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/SiliconValet/pattern-kit.git"
+        }
+    ]
+}

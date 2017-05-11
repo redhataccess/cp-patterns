@@ -1,0 +1,11 @@
+[{
+    "label": "",
+    "data": {
+        "name": "<%= props.name_underscore %>"<% props.template_component_elements.forEach( function( element ){ %>,<% if( element == 'config' ){ %>
+        "config": { <% props.component_config_options.forEach( function( option, idx ){ if (idx > 0) { %>,<% } %>
+            "<%= option %>": ""<% }); %>
+        }<% } else { %>
+        "<%= element %>": ""<% } }); for (var element in props.custom_elements_dash) { var type = props.custom_elements_dash[element]; %>,
+        "<%= element %>": <% if( type == 'object' ){ %>{}<% } else if( type == 'array' ){ %>[]<% } else if( type == 'number' ){ %>0<% } else if( type == 'boolean' ){ %>false<%  } else { %>""<% } } %>
+  }
+}]

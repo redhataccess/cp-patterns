@@ -1,0 +1,249 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "<%= props.name.charAt( 0 ).toUpperCase() + props.name.slice(1) %>",
+    "description": "",
+    "type": "object",
+    "category": "pattern",
+    "status": "private",
+    "format": "grid",
+    "properties": {
+        "name": {
+            "type": "string",
+            "readonly": true,
+            "enum": ["<%= props.name_underscore %>"],
+            "options": {
+                "hidden": true
+            }
+        }<% props.template_pattern_elements.forEach( function( pattern, idx ) { %>,<% if ( pattern == 'config' ) { %>
+        "config": {
+            "type": "object",
+            "options": {
+                "grid_columns": 12
+            },
+            "properties": {<% props.pattern_config_options.forEach( function( property, idx ) { if ( idx > 0 ) { %>,<% } if( property == 'align' ) { %>
+                "align": {
+                    "title": "Alignment",
+                    "type": "string",
+                    "enum": [ "left", "right", "center" ],
+                    "default": "left",
+                    "options": {
+                        "grid_columns": 4
+                    }
+                }<% } else if (property == 'theme') { %>
+                "theme": {
+                    "title": "Theme",
+                    "description": "",
+                    "type": "string",
+                    "enum": [ "dark", "light" ],
+                    "default": "light"
+                }<% } else if (property == 'layout') { %>
+                "layout": {
+                    "title": "Layout",
+                    "description": "",
+                    "type": "string",
+                    "enum": [ "stacked", "gallery2", "gallery3", "gallery4", "gallery5" ],
+                    "default": "stacked"
+                }<% } } ); %>
+            },
+            "required": []
+        }<% } else if (pattern == 'background') { %>
+        "background": {
+            "title": "Background options",
+            "type": "object",
+            "format": "grid",
+            "properties": {
+                "color": {
+                    "type": "string",
+                    "enum": ["white", "gray", "black", "rich-black", "transparent"]
+                },
+                "image_large": {
+                    "$ref": "image.json",
+                    "title": "Large screen background"
+                },
+                "image_small": {
+                    "$ref": "image.json",
+                    "title": "Small screen background"
+                },
+                "isFixed": {
+                    "title": "Fixed background option",
+                    "type": "boolean"
+                },
+                "align": {
+                    "title": "Alignment for background image",
+                    "type": "string",
+                    "enum": ["center-center", "right-center", "left-center"],
+                    "default": "center-center",
+                    "options": {
+                        "hidden": true
+                    }
+                }
+            }
+        }<% } else if (pattern == 'header') { %>
+        "header": {
+            "title": "Header",
+            "type": "object",
+            "format": "grid",
+            "properties": {
+                "seo_emphasis": {
+                    "title": "SEO Emphasis",
+                    "description": "Emphasize element with keywords or relevant content. 'Standard' is the system default",
+                    "type": "string",
+                    "enum": [ "standard", "title", "headline" ],
+                    "default": "standard"
+                },
+                "theme": {
+                    "title": "Band Header Theme",
+                    "description": "Select dark theme when using a dark background",
+                    "type": "string",
+                    "enum": [ "light", "dark" ],
+                    "default": "light"
+                },
+                "title": {
+                    "title": "Band Title",
+                    "type": "string",
+                    "options": {
+                        "preview": true
+                    }
+                },
+                "headline": {
+                    "title": "Band Headline",
+                    "type": "string",
+                    "options": {
+                        "preview": true
+                    }
+                },
+                "summary": {
+                    "title": "Band Subtitle",
+                    "description": "Allowed tags: &lt;a&gt;&lt;br&gt;",
+                    "type": "string",
+                    "format": "html"
+                }
+            }
+        }<% } else if (pattern == 'body') { %>
+        "body": {
+            "title": "Body",
+            "type": "object",
+            "format": "grid",
+            "properties": {
+                "layout": {
+                    "type": "string"
+                },
+                "theme": {
+                    "type": "string",
+                    "enum": ["light", "dark"]
+                },
+                "sub_patterns": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 10,
+                    "items": {
+                        "title": "Body patterns",
+                        "oneOf": [{
+                            "$ref": "standard_text.json"
+                        }, {
+                            "$ref": "raw_html.json"
+                        }]
+                    }
+                }
+            }
+        }<% } else if (pattern == 'aside') { %>
+        "aside": {
+            "title": "Aside",
+            "type": "object",
+            "format": "grid",
+            "options": {
+                "collapsed": true
+            },
+            "properties": {
+                "layout": {
+                    "type": "string"
+                },
+                "theme": {
+                    "type": "string",
+                    "enum": ["light", "dark"]
+                },
+                "sub_patterns": {
+                    "type": "array",
+                    "maxItems": 1,
+                    "items": {
+                        "title": "Aside item",
+                        "oneOf": [{
+                            "$ref": "raw_html.json"
+                        }, {
+                            "$ref": "standard_text.json"
+                        }]
+                    }
+                }
+            }
+        }<% } else if (pattern == 'footer') { %>
+        "footer": {
+            "title": "Footer",
+            "type": "object",
+            "format": "grid",
+            "properties": {
+                "layout": {
+                    "type": "string"
+                },
+                "theme": {
+                    "type": "string",
+                    "enum": ["light", "dark"]
+                },
+                "sub_patterns": {
+                    "type": "array",
+                    "maxItems": 1,
+                    "items": {
+                        "title": "Footer item",
+                        "oneOf": [{
+                            "$ref": "cta.json"
+                        }, {
+                            "$ref": "footnote.json"
+                        }]
+                    }
+                }
+            }
+        }<% } else if (pattern == 'cta') { %>
+        "cta": {
+            "title": "Call-to-action",
+            "type": "object",
+            "format": "grid",
+            "options": {
+                "collapsed": true
+            },
+            "properties": {
+                "theme": {
+                    "type": "string",
+                    "enum": ["light", "dark"]
+                },
+                "type": {
+                    "title": "Call-to-action type",
+                    "type": "string",
+                    "enum": [ "primary", "secondary" ],
+                    "default": "secondary"
+                },
+                "link": {
+                    "$ref": "link.json"
+                }
+            }
+        }<% } });  for (var element in props.custom_elements_dash) { var type = props.custom_elements_dash[element]; %>,
+        "<%= element.replace(/-/g,'_') %>": {
+            "title": "<%= element.charAt( 0 ).toUpperCase() + element.toLowerCase().slice(1).replace(/-/g,' ') %>",
+            "description": "",
+            "type": "<%= type %>"<% if ( type == 'object') { %>,
+            "format": "grid",
+            "properties": {},
+            "required": []<% } else if ( type == 'array') { %>,
+            "minItems": 1,
+            "maxItems": 10,
+            "items": {
+                "oneOf": [{
+                    "$ref": "raw.json"
+                }]
+            }<% } else if ( type == 'string') { %>,
+            "enum": [],
+            "default": ""<% } else if ( type == 'boolean') { %>,
+            "default": false<% } %>
+        }<% } %>
+    },
+    "required": ["name"],
+    "additionalProperties": false
+}

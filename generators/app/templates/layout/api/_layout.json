@@ -1,0 +1,216 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "<%= props.name %>",
+    "description": "",
+    "type": "object",
+    "category": "<%= props.type %>",
+    "status": "private",
+    "format": "grid",
+    "properties": {
+        "name": {
+            "type": "string",
+            "readonly": true,
+            "enum": ["<%= props.name_underscore %>"],
+            "options": {
+                "hidden": true
+            }
+        }<% props.template_layout_elements.forEach( function( element, idx ) { %>,<% if (element == 'config') { %>
+        "config": {
+            "type": "object",
+            "options": {
+                "grid_columns": 12
+            },
+            "properties": {<% props.layout_config_options.forEach( function( property, idx ) { if ( idx > 0 ) { %>,<% } if( property == 'collapse') { %>
+                "collapse": {
+                    "title": "Collapse padding",
+                    "description": "To alter the default padding in this layout, select an option below to reduce or remove padding.",
+                    "type": "string",
+                    "enum": ["full_top", "full_bottom", "full", "top", "bottom", "both"]
+                }<% } else if (property == 'vertical_spacing') { %>
+                "vertical_spacing": {
+                    "title": "Vertical layout",
+                    "description": "Vertical space between elements.",
+                    "type": "string",
+                    "enum": ["min-stacked", "stacked", "tall-stacked"],
+                    "default": "stacked"
+                }<% } else if (property == 'eqpts') {  %>
+                "eqpts": {
+                    "title": "Element query",
+                    "description": "Optional styles based on element width. Example: small: 400, medium: 600, large: 900",
+                    "type": "string"
+                }<% } else if (property == 'justify') { %>
+                "justify": {
+                    "title": "Justify content",
+                    "description": "Justify will stretch the body to fill the height of container.",
+                    "type": "string",
+                    "enum": [ "center", "top", "justify" ],
+                    "default": "justify"
+                }<% } else if (property == 'theme') { %>
+                "theme": {
+                    "title": "Theme",
+                    "description": "",
+                    "type": "string",
+                    "enum": [ "dark", "light" ],
+                    "default": "light"
+                }<% } } ); %>
+            },
+            "required": []
+        }<% } else if (element == 'background') { %>
+        "background": {
+            "title": "Background options",
+            "type": "object",
+            "format": "grid",
+            "properties": {
+                "color": {
+                    "type": "string",
+                    "enum": ["white", "gray", "black", "rich-black", "transparent"]
+                },
+                "image_large": {
+                    "$ref": "image.json",
+                    "title": "Large screen background"
+                },
+                "image_small": {
+                    "$ref": "image.json",
+                    "title": "Small screen background"
+                },
+                "isFixed": {
+                    "title": "Fixed background option",
+                    "type": "boolean"
+                },
+                "align": {
+                    "title": "Alignment for background image",
+                    "type": "string",
+                    "enum": ["center-center", "right-center", "left-center"],
+                    "default": "center-center",
+                    "options": {
+                        "hidden": true
+                    }
+                }
+            }
+        }<% } else if (element == 'header') { %>
+        "header": {
+            "title": "Header",
+            "type": "object",
+            "format": "grid",
+            "properties": {
+                "layout": {
+                    "type": "string"
+                },
+                "theme": {
+                    "type": "string",
+                    "enum": ["light", "dark"]
+                },
+                "content": {
+                    "type": "array",
+                    "maxItems": 1,
+                    "items": {
+                        "title": "Header item",
+                        "oneOf": [{
+                            "$ref": "band_header.json"
+                        }]
+                    }
+                }
+            }
+        }<% } else if (element == 'body') { %>
+        "body": {
+            "title": "Body",
+            "type": "object",
+            "format": "grid",
+            "properties": {
+                "layout": {
+                    "type": "string"
+                },
+                "theme": {
+                    "type": "string",
+                    "enum": ["light", "dark"]
+                },
+                "content": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "title": "Body item",
+                        "oneOf": [{
+                            "$ref": "generic.json"
+                        }, {
+                            "$ref": "raw.json"
+                        }]
+                    }
+                }
+            }
+        }<% } else if (element == 'aside') { %>
+        "aside": {
+            "title": "Aside",
+            "type": "object",
+            "format": "grid",
+            "properties": {
+                "layout": {
+                    "type": "string"
+                },
+                "theme": {
+                    "type": "string",
+                    "enum": ["light", "dark"]
+                },
+                "content": {
+                    "type": "array",
+                    "maxItems": 1,
+                    "items": {
+                        "title": "Aside item",
+                        "oneOf": [{
+                            "$ref": "card.json"
+                        }, {
+                            "$ref": "group.json"
+                        }, {
+                            "$ref": "raw.json"
+                        }]
+                    }
+                }
+            }
+        }<% } else if (element == 'footer') { %>
+        "footer": {
+            "title": "Footer",
+            "type": "object",
+            "format": "grid",
+            "properties": {
+                "layout": {
+                    "type": "string"
+                },
+                "theme": {
+                    "type": "string",
+                    "enum": ["light", "dark"]
+                },
+                "content": {
+                    "type": "array",
+                    "maxItems": 1,
+                    "items": {
+                        "title": "Footer Item",
+                        "oneOf": [{
+                            "$ref": "cta.json"
+                        }, {
+                            "$ref": "footnote.json"
+                        }]
+                    }
+                }
+            }
+        }<% } } );  for (var element in props.custom_elements_dash) { var type = props.custom_elements_dash[element]; %>,
+        "<%= element.replace(/-/g,'_') %>": {
+            "title": "<%= element.charAt( 0 ).toUpperCase() + element.toLowerCase().slice(1).replace(/-/g,' ') %>",
+            "description": "",
+            "type": "<%= type %>"<% if ( type == 'object') { %>,
+            "format": "grid",
+            "properties": {},
+            "required": []<% } else if ( type == 'array') { %>,
+            "minItems": 1,
+            "maxItems": 10,
+            "items": {
+                "oneOf": [{
+                    "$ref": "raw.json"
+                }]
+            }<% } else if ( type == 'string') { %>,
+            "enum": [],
+            "default": ""<% } else if ( type == 'boolean') { %>,
+            "default": false<% } %>
+        }<% } %>
+    },
+    "required": ["name"],
+    "additionalProperties": false
+}

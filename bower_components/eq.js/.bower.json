@@ -1,0 +1,44 @@
+{
+  "name": "eq.js",
+  "version": "1.5.0",
+  "authors": [
+    "Sam Richard <snugug@gmail.com>"
+  ],
+  "description": "Element queries, fast and light",
+  "main": "dist/eq.min.js",
+  "keywords": [
+    "Element Queries",
+    "Responsive Web Design",
+    "JavaScript",
+    "RWD"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "Gemfile",
+    "Gemfile.lock",
+    "Gruntfile.js",
+    "bower.json",
+    "css",
+    "index.html",
+    "package.json",
+    "sass/style.scss"
+  ],
+  "dependencies": {
+    "domready": "*"
+  },
+  "homepage": "https://github.com/Snugug/eq.js",
+  "_release": "1.5.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.5.0",
+    "commit": "587ecfc9130558e20df62d26a7329edea9c3b654"
+  },
+  "_source": "https://github.com/Snugug/eq.js.git",
+  "_target": "~1.5.0",
+  "_originalSource": "eq.js"
+}

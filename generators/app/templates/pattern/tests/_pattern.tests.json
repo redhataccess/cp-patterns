@@ -1,0 +1,48 @@
+[{
+    "label": "",
+    "data": {
+        "name": "<%= props.name_underscore %>"<% props.template_pattern_elements.forEach( function( element ){ %>,<% if( element == 'config' ){ %>
+        "config": { <% props.pattern_config_options.forEach( function( option, idx ){ if (idx > 0) { %>,<% } %>
+            "<%= option %>": ""<% }); %>
+        }<% } else if ( element == 'background' ) { %>
+        "background": {
+            "color": "white",
+            "image_large": "",
+            "image_small": "",
+            "isFixed": false,
+            "align": "center-center"
+        }<% } else if ( element == 'header' ) { %>
+        "header": {
+            "seo_emphasis": "standard",
+            "theme": "light",
+            "title": "",
+            "headline": "",
+            "summary": ""
+        }<% } else if ( element == 'body' ) { %>
+        "body": {
+            "layout": "stacked",
+            "theme": "light",
+            "sub_patterns": []
+        }<% } else if ( element == 'aside' ) { %>
+        "aside": {
+            "layout": "stacked",
+            "theme": "light",
+            "sub_patterns": []
+        }<% } else if ( element == 'footer' ) { %>
+        "footer": {
+            "layout": "stacked",
+            "theme": "light",
+            "sub_patterns": []
+        }<% } else if ( element == 'cta' ) { %>
+        "cta": {
+            "type": "secondary",
+            "link": {
+                "text": "",
+                "href": "#",
+                "title": ""
+            }
+        }<% } else { %>
+        "<%= element %>": ""<% } }); for (var element in props.custom_elements_dash) { var type = props.custom_elements_dash[element]; %>,
+        "<%= element %>": <% if( type == 'object' ){ %>{}<% } else if( type == 'array' ){ %>[]<% } else if( type == 'number' ){ %>0<% } else if( type == 'boolean' ){ %>false<%  } else { %>""<% } } %>
+  }
+}]

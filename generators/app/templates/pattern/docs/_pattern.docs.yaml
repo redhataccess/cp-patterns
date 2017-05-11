@@ -1,0 +1,12 @@
+name: <%= props.name_underscore %><% props.template_pattern_elements.forEach( function( element ) { if( element == 'config' ){ %>
+config:<% props.pattern_config_options.forEach( function( option ) { %>
+    <%= option %>: <% }); } else if( element == 'background'){ %>
+background:
+    color:
+    image_large:
+        src:
+    image_small:
+        src:
+    isFixed: false<% } else { %>
+<%= element %>:<% } }); %><% for (var element in props.custom_elements_underscore) { var type = props.custom_elements_underscore[element]; %>
+<%= element %>: <% if( type == 'boolean') { %>false<% } else if ( type == 'number') { %>0<% } } %>

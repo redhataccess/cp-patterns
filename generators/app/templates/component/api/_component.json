@@ -1,0 +1,95 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "<%= props.name.charAt( 0 ).toUpperCase() + props.name.slice(1) %>",
+    "description": "",
+    "type": "object",
+    "category": "<%= props.type %>",
+    "status": "private",
+    "format": "grid",
+    "properties": {
+        "name": {
+            "type": "string",
+            "readonly": true,
+            "enum": ["<%= props.name_underscore %>"],
+            "options": {
+                "hidden": true
+            }
+        }<% props.template_component_elements.forEach( function( component, idx ) { %>,<% if ( component == 'config' ) { %>
+        "config": {
+            "type": "object",
+            "options": {
+                "grid_columns": 12
+            },
+            "properties": {<% props.component_config_options.forEach( function( property, idx ) { if ( idx > 0 ) { %>,<% } if( property == 'align' ) { %>
+                "align": {
+                    "title": "Alignment",
+                    "type": "string",
+                    "enum": [ "left", "right", "center" ],
+                    "default": "left",
+                    "options": {
+                        "grid_columns": 4
+                    }
+                }<% } else if (property == 'size') { %>
+                "size": {
+                    "title": "Size",
+                    "type": "string",
+                    "enum": [ "small", "medium", "large" ],
+                    "default": "medium",
+                    "options": {
+                        "grid_columns": 4
+                    }
+                }<% } } ); %>
+            },
+            "required": []
+        }<% } else if ( component == 'title' ) { %>
+        "title": {
+            "title": "Title",
+            "type": "string",
+            "description": "Short, keyword-heavy intro text",
+            "options": {
+                "grid_column": 4,
+                "preview": true
+            }
+        }<% } else if ( component == 'headline' ) { %>
+        "headline": {
+            "title": "Headline",
+            "description": "Longer descriptive text",
+            "type": "string",
+            "options": {
+                "grid_column": 4,
+                "preview": true
+            }
+        }<% } else if ( component == 'summary' ) { %>
+        "summary": {
+            "title": "Summary",
+            "description": "Allowed tags: &lt;a&gt;&lt;br&gt;",
+            "type": "string",
+            "format": "html",
+            "options": {
+                "grid_column": 12
+            }
+        }<% } } );  for (var element in props.custom_elements_dash) { var type = props.custom_elements_dash[element]; %>,
+        "<%= element.replace(/-/g,'_') %>": {
+            "title": "<%= element.charAt( 0 ).toUpperCase() + element.toLowerCase().slice(1).replace(/-/g,' ') %>",
+            "description": "",
+            "type": "<%= type %>"<% if ( type == 'object' ) { %>,
+            "format": "grid",
+            "properties": {
+
+            },
+            "required": []<% } else if ( type == 'array' ) { %>,
+            "minItems": 1,
+            "maxItems": 10,
+            "items": {
+                "oneOf": [{
+                    "$ref": "raw.json"
+                }]
+            }<% } else if ( type == 'string' ) { %>,
+            "enum": [],
+            "default": ""<% } else if ( type == 'boolean' ) { %>,
+            "default": false<% } %>
+        }<% } %>
+    },
+    "required": ["name"],
+    "additionalProperties": false
+}

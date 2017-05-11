@@ -1,0 +1,7 @@
+[{
+    "label": "",
+    "data": {
+        "name": "<%= props.name_underscore %>"<% props.custom_elements_underscore.forEach(function(element, idx) { %>,
+      "<%= element %>": ""<% }); %>
+  }
+}]
