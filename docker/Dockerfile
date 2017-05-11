@@ -24,7 +24,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
 
 WORKDIR /var/www/html
 
-# Install app dependencies
+# Install app dependencies - cannot do this at build time since the source is not there.
 #RUN composer install --no-plugins --no-scripts  \
 # && npm install \
 # && bower install
