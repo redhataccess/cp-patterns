@@ -1,5 +1,0 @@
-Polymer({
-
-    is: 'cp-card'
-
-});
