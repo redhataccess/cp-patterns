@@ -20,4 +20,4 @@ services:
     environment:
       XDEBUG_CONFIG: remote_host=10.254.254.254
     ports:
-      - "8080:80"
+      - "9993:80"
