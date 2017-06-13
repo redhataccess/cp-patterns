@@ -1,7 +1,9 @@
 # cp-patterns
 Experimental Customer Portal Web Component Pattern Library.
 
-## Setup
+## Developing Patterns & Components
+
+### Setup
 After downloading the repo, install [Docker](https://www.docker.com/) and [docker-compose](https://docs.docker.com/compose/install/) (often bundled).
 
 Within the source tree, run the following:
