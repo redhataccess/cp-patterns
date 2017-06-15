@@ -20,4 +20,4 @@ services:
     environment:
       XDEBUG_CONFIG: remote_host=10.254.254.254
     ports:
-      - "9993:80"
+      - $PK_LISTEN_PORT:80

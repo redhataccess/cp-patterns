@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ef55546df78826eda99aae2e12489a28",
+    "content-hash": "c4b2759301e745060c3bbc296ec3207a",
     "packages": [
         {
             "name": "deralex/yaml-config-service-provider",
@@ -332,11 +332,11 @@
         },
         {
             "name": "pattern-builder/pattern-kit",
-            "version": "dev-feature/jassmith/Modifications",
+            "version": "dev-feature/jassmith/patternkit-rest-tweaks",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SiliconValet/pattern-kit.git",
-                "reference": "0a6e9c4467601ddb20ffe01606df196f0c2869e5"
+                "reference": "abb2c8f32c4cde3f8ebeb55454a714f5c67de1cd"
             },
             "require": {
                 "deralex/yaml-config-service-provider": "@dev",
@@ -352,11 +352,19 @@
                 "symfony/yaml": "=2.6.13",
                 "twig/twig": "1.24.*"
             },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2"
+            },
             "type": "library",
             "autoload": {
                 "psr-0": {
                     "PatternKit\\": "src"
                 }
+            },
+            "scripts": {
+                "cs": [
+                    "php-cs-fixer fix src"
+                ]
             },
             "license": [
                 "MIT"
@@ -367,7 +375,7 @@
                     "email": "micahgodbolt@gmail.com"
                 }
             ],
-            "time": "2017-04-13T17:19:02+00:00"
+            "time": "2017-06-15 19:32:12"
         },
         {
             "name": "pimple/pimple",
@@ -546,16 +554,16 @@
         },
         {
             "name": "symfony/debug",
-            "version": "v2.8.20",
+            "version": "v2.8.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "344f50ce827413b3640bfcb1e37386a67d06ea1f"
+                "reference": "8470d7701177a88edeb0cec59b44d50ef4477e9b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/344f50ce827413b3640bfcb1e37386a67d06ea1f",
-                "reference": "344f50ce827413b3640bfcb1e37386a67d06ea1f",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/8470d7701177a88edeb0cec59b44d50ef4477e9b",
+                "reference": "8470d7701177a88edeb0cec59b44d50ef4477e9b",
                 "shasum": ""
             },
             "require": {
@@ -599,7 +607,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2017-04-19T19:56:30+00:00"
+            "time": "2017-06-01T20:52:29+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -794,16 +802,16 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.3.0",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "e79d363049d1c2128f133a2667e4f4190904f7f4"
+                "reference": "f29dca382a6485c3cbe6379f0c61230167681937"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/e79d363049d1c2128f133a2667e4f4190904f7f4",
-                "reference": "e79d363049d1c2128f133a2667e4f4190904f7f4",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/f29dca382a6485c3cbe6379f0c61230167681937",
+                "reference": "f29dca382a6485c3cbe6379f0c61230167681937",
                 "shasum": ""
             },
             "require": {
@@ -815,7 +823,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.3-dev"
+                    "dev-master": "1.4-dev"
                 }
             },
             "autoload": {
@@ -849,7 +857,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-11-14T01:06:16+00:00"
+            "time": "2017-06-09T14:24:12+00:00"
         },
         {
             "name": "symfony/routing",
@@ -922,7 +930,7 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v3.2.8",
+            "version": "v3.2.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
