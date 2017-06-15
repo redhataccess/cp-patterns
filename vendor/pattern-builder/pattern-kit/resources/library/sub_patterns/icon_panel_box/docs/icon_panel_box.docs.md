@@ -1,1 +1,0 @@
-## Icon panel box subpattern

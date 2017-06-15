@@ -1,1 +1,0 @@
-## Standard text subpattern

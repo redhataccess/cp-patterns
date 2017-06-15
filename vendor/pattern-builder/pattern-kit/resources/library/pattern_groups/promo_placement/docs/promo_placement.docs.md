@@ -1,1 +1,0 @@
-## Promo placement pattern-group

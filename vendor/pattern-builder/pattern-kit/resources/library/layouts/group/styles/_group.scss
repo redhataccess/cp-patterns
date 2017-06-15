@@ -1,8 +1,0 @@
-.#{$repo}-group {
-    &--layout {
-        position: relative;
-        @include bp-styles( hide ) {
-            display: none;
-        }
-    }
-}
