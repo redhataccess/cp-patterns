@@ -28,6 +28,9 @@ categories:
     - Molecule
     - Organism
     - Layout
+ignore_categories:
+    - Nucleus
+    - Electron
 assets:
   css:
     - /dist/css/webrh.css

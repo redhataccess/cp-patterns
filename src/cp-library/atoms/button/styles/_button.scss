@@ -1,0 +1,59 @@
+:host {
+	display: block;
+}
+
+.cp-btn {
+	display: inline-block;
+	padding: 9px 40px;
+	background-color: #c00;
+	color: #fff;
+	border: 1px solid #c00;
+	text-decoration: none;
+	text-transform: uppercase;
+	white-space: normal;
+	word-wrap: break-word;
+	font-weight: 600;
+	line-height: 20px;
+	font-size: 14px;
+	border-radius: 0;
+
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	transition-property: background;
+
+
+	&,
+	&:link,
+	&:visited {
+		color: #fff;
+	}
+
+	&:hover,
+	&:focus {
+		color: #fff;
+		background: darken(#c00, 5);
+		border-color: darken(#c00, 5);
+	}
+
+}
+
+// .cp-btn[data-style="solid"][data-color="blue"] {
+//     border: 1px solid #06c;
+//     background: #06c;
+//     color: #fff;
+// }
+// .cp-btn[data-style="solid"][data-color="grey"] {
+//     border: 1px solid #d2d3d4;
+//     background: #d2d3d4;
+//     color: #333;
+// }
+// .cp-btn[data-style="solid"][data-color="white"] {
+//     border: 1px solid #fff;
+//     background: #fff;
+//     color: #333;
+// }
+// .cp-btn[data-style="solid"][data-color="none"] {
+//     border: 1px solid transparent;
+//     background: transparent;
+//     color: #333;
+// }

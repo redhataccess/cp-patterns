@@ -21,7 +21,7 @@ module.exports = function (grunt) {
     require('./grunt_tasks/bump.js')(grunt, pkg, paths);
     require('./grunt_tasks/testing.js')(grunt, pkg, paths);
     require('./grunt_tasks/files.js')(grunt, pkg, paths);
-    require('./grunt_tasks/cp-files.js')(grunt, pkg, paths);
+    require('./grunt_tasks/cp-files.js')(grunt, pkg, paths); // For CPUX only
     require('./grunt_tasks/server.js')(grunt, pkg, paths);
 
     grunt.config.merge({

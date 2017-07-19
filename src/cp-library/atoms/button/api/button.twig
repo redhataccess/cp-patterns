@@ -1,0 +1,28 @@
+{% if link.text %}
+
+    {% if "button" in config.semantic %}
+        {% set tag = "button" %}
+        {% set type = "button" %}
+        {% if "submit" in config.semantic %}
+            {% set type = "submit" %}
+        {% elseif "reset" in config.semantic %}
+            {% set type = "reset" %}
+        {% endif %}
+        {% set cta_link_attributes %}
+            {% if tag == "button" %}type="{{ type }}"{% endif %}
+        {% endset %}
+    {% else %}
+        {% set tag = "a" %}
+    {% endif %}
+
+    <{{ tag }} class="cp-btn" {{ button_attributes }} data-style="{{ config.style }}" data-color="{{ config.color }}"
+        {% if tag == "a" %}
+            {% if link.href %}href="{{ link.href }}"{% endif %}
+            {% if link.target == "_blank" %}target="{{ link.target }}"{% endif %}
+        {% endif %}
+        {% if link.title %}title="{% include "no_html.twig" with { "string": link.title } only %}"{% endif %}
+    >
+        {% include "no_html.twig" with { "string": link.text } only %}
+    </{{ tag }}>
+
+{% endif %}
