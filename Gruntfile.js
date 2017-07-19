@@ -21,6 +21,7 @@ module.exports = function (grunt) {
     require('./grunt_tasks/bump.js')(grunt, pkg, paths);
     require('./grunt_tasks/testing.js')(grunt, pkg, paths);
     require('./grunt_tasks/files.js')(grunt, pkg, paths);
+    require('./grunt_tasks/cp-files.js')(grunt, pkg, paths);
     require('./grunt_tasks/server.js')(grunt, pkg, paths);
 
     grunt.config.merge({
@@ -36,6 +37,23 @@ module.exports = function (grunt) {
         'copy:data', // files
         'copy:schemas', // files
         'copy:images', // files
+        'jsonlint', // js
+        'jshint', // js
+        'bower_concat', // js
+        "sass_globbing", // sass
+        'sass', // sass
+        'autoprefixer:dev', // sass
+        'concat', // js
+        'modernizr:dist', // sass
+    ]);
+
+    // Default task compiles a distributable copy of the repo
+    grunt.registerTask('cp', [
+        'clean', // files
+        'copy:cp_templates', // files
+        'copy:cp_data', // files
+        'copy:cp_schemas', // files
+        'copy:cp_images', // files
         'jsonlint', // js
         'jshint', // js
         'bower_concat', // js

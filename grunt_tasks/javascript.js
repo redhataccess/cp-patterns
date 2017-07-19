@@ -13,6 +13,7 @@ module.exports = function( grunt, pkg, paths ) {
                 ],
                 dependencies: {},
                 mainFiles: {
+                    'webcomponentsjs': 'webcomponents-loader.js',
                     'slick-carousel': 'slick/slick.min.js'
                 },
                 bowerOptions: {

@@ -1,4 +1,4 @@
-title: WebRH Schema Editor
+title: CPUX Pattern Library
 
 paths:
   sg:
@@ -24,11 +24,10 @@ extensions:
   sg: .md
   docs: .docs.md
 categories:
-    - Pattern
-    - Sub Pattern
-    - Layout
-    - Component
     - Atom
+    - Molecule
+    - Organism
+    - Layout
 assets:
   css:
     - /dist/css/webrh.css
