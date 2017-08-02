@@ -22,7 +22,15 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
  && php composer-setup.php --install-dir=/bin --filename=composer \
  && php -r "unlink('composer-setup.php');"
 
+# Copy current source to docker container so that we can do some iterative
+COPY . /var/www/html
+
 WORKDIR /var/www/html
+
+RUN composer install
+RUN rm -rf node_modules
+RUN npm --max_semi_space_size=1 --max_old_space_size=198 --max_executable_size=148 install -g grunt grunt-cli
+RUN npm --max_semi_space_size=1 --max_old_space_size=198 --max_executable_size=148 install
 
 # Install app dependencies - cannot do this at build time since the source is not there.
 #RUN composer install --no-plugins --no-scripts  \
