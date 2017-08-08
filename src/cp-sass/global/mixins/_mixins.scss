@@ -1,0 +1,73 @@
+/*doc
+---
+title: make-cp-button()
+category: Global - Mixins
+---
+
+@mixin make-button($btn-color, $btn-text-color: white, $disabled: false)
+
+-    __$btn-color__ - sets background color
+-    __$btn-text-color: white__ - sets text color
+-    __$border: 0__ - sets border styles, i.e. 1px solid color("rh-white")
+-    __$disabled: false__ - if set to "true" removes hover effect and sets pointer to default
+
+```inline
+.class_name {
+    @include make-button(
+        color("brand-primary"),
+        color("white")
+    );
+}
+```
+*/
+
+@mixin make-cp-button(
+    $btn-color,
+    $btn-text-color: #fff,
+    $border: 0,
+    $disabled: false,
+    $btn-color-hover: null,
+    $btn-text-color-hover: null,
+    $padding: pem(9) pem(40)) {
+
+    background-color: $btn-color;
+    color: $btn-text-color;
+    display: inline-block;
+    font-family: $base-font-family;
+    border: $border; // this fixes buttons elements with this style
+    font-size: pem(16);
+    padding: $padding;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    @if $disabled != disabled {
+        transition: background .2s ease-in 0s;
+        cursor: pointer;
+        &:hover {
+            text-decoration: none;
+            @if $btn-color-hover != null {
+                background-color: $btn-color-hover;
+                @if $border != 0 and type-of(last($border)) == color {
+                    border-color: $btn-color-hover;
+                }
+            }
+            @else {
+                background-color: darken($btn-color, 6%);
+            }
+            @if $btn-text-color-hover != null {
+                color: $btn-text-color-hover;
+            }
+            @else {
+                color: $btn-text-color;
+            }
+        }
+    }
+    @if $disabled == true {
+        cursor: default;
+        &:hover {
+            background-color: $btn-color;
+            color: $btn-text-color;
+            text-decoration: none;
+        }
+    }
+}

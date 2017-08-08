@@ -17,19 +17,19 @@ to serve the files as close, and fast as possible to your users:
 - https://cdnjs.com/libraries/slick-carousel
 - https://www.jsdelivr.com/projects/jquery.slick
 
-#####Example using jsDelivr
+##### Example using jsDelivr
 
 Just add a link to the css file in your `<head>`:
 ```html
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.7.1/slick.css"/>
 <!-- Add the slick-theme.css if you want default styling -->
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.7.1/slick-theme.css"/>
 ```
 
 Then, before your closing ```<body>``` tag add:
 
 ```html
-<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.7.1/slick.min.js"></script>
 ```
 
 #### Package Managers
@@ -67,7 +67,7 @@ Example:
 
 Option | Type | Default | Description
 ------ | ---- | ------- | -----------
-accessibility | boolean | true | Enables tabbing and arrow key navigation
+accessibility | boolean | true | Enables tabbing and arrow key navigation.  Unless `autoplay: true`, sets browser focus to current slide (or first of current slide set, if multiple `slidesToShow`) after slide change.
 adaptiveHeight | boolean | false | Adapts slider height to the current slide
 autoplay | boolean | false | Enables auto play of slides
 autoplaySpeed | int  | 3000 | Auto play change interval

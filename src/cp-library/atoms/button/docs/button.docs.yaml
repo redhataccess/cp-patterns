@@ -1,0 +1,8 @@
+name: button
+config:
+    style: solid
+    color: blue
+    semantic: button
+link:
+    href: '#'
+    text: Link text
