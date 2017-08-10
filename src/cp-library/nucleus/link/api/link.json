@@ -6,7 +6,14 @@
     "type": "object",
     "format": "grid",
     "properties": {
-        "text": {
+        "name": {
+            "type": "string",
+            "enum": [ "link" ],
+            "options": {
+                "hidden": true
+            }
+        },
+        "linktext": {
             "title": "Link text",
             "type": "string",
             "default": "Link text",
@@ -14,7 +21,7 @@
                 "grid_columns": 4
             }
         },
-        "href": {
+        "linkhref": {
             "title": "Link URL",
             "type": "string",
             "format": "url",
@@ -23,7 +30,7 @@
                 "grid_columns": 4
             }
         },
-        "title": {
+        "linktitle": {
             "title": "Title attribute",
             "description": "Shown on mouseover.",
             "type": "string",
@@ -31,7 +38,7 @@
                 "grid_columns": 4
             }
         },
-        "target": {
+        "linktarget": {
             "title": "Target",
             "description": "Strongly recommend against - uses _blank to open links in a new window.",
             "type": "string",
@@ -41,5 +48,5 @@
             }
         }
     },
-    "required": [ "href" ]
+    "required": [ "linkhref" ]
 }

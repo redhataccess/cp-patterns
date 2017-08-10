@@ -1,6 +1,6 @@
-FROM php:7.0-apache
+FROM php:7.1-apache
 
-RUN a2enmod rewrite headers
+RUN a2enmod rewrite headers ssl
 
 # Install the PHP extensions we need
 RUN apt-get update \
@@ -22,22 +22,19 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
  && php composer-setup.php --install-dir=/bin --filename=composer \
  && php -r "unlink('composer-setup.php');"
 
-# Copy current source to docker container so that we can do some iterative
+# Install xdebug
+RUN yes | pecl install xdebug
+
+# Copy current source to docker container so that we can do some work ahead of time that depends on composer.json.
 COPY . /var/www/html
+
+EXPOSE 80 443
 
 WORKDIR /var/www/html
 
 RUN composer install
 RUN rm -rf node_modules
+# This runs npm in a more memory conservative way.
 RUN npm --max_semi_space_size=1 --max_old_space_size=198 --max_executable_size=148 install -g grunt grunt-cli
 RUN npm --max_semi_space_size=1 --max_old_space_size=198 --max_executable_size=148 install
 
-# Install app dependencies - cannot do this at build time since the source is not there.
-#RUN composer install --no-plugins --no-scripts  \
-# && npm install \
-# && bower install
-
-#CMD bash -e "grunt watcher"
-
-# Install xdebug
-#RUN yes | pecl install xdebug

@@ -16,6 +16,8 @@ paths:
     - fixtures/templates
   docs:
     - dist/library/docs
+  assets:
+    - dist/library/assets
 extensions:
   data: .docs.json
   test_data: .tests.json
@@ -24,13 +26,9 @@ extensions:
   sg: .md
   docs: .docs.md
 categories:
-    - Atom
-    - Molecule
-    - Organism
-    - Layout
-ignore_categories:
-    - Nucleus
-    - Electron
+support_assets:
+  component_polyfill: "/bower_components/polymer/polymer.html"
+  legacy_component_polyfill: "https://polygit.org/polymer+2.0.0-rc.2/polymerelements+:2.0-preview/shadycss+webcomponents+1.0.0-rc.2/components/polymer/polymer-element.html"
 assets:
   css:
     - /dist/css/webrh.css

@@ -7,7 +7,7 @@
         }
     ],
     "require": {
-        "pattern-builder/pattern-kit": "dev-feature/jassmith/patternkit-rest-tweaks"
+        "pattern-builder/pattern-kit": "dev-feature/jassmith/patternkit-rest-tweaks2"
     },
     "config": {
         "preferred-install": "dist"

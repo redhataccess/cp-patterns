@@ -1,0 +1,32 @@
+# The machine name of this pattern.
+name: link
+# The release version for this pattern.
+version: 1.0.0
+# The status of this pattern (active, deprecated, development).
+status: active
+# The properties that should be exposed as dynamic. (Exclude layout type config for example).
+dynamic_properties:
+  - linktext
+  - linkhref
+  - linktitle
+# CSS for the pattern. Note that shared CSS is ALWAYS relative to pattern.
+css:
+  # CSS that should accompany only this pattern.
+  list:
+    - ./test.css
+  # CSS that potentially could be reused by other patterns (influences delivery and aggregation).
+  shared:
+    - name: linkbase
+      src: ./test2.css
+# JS for the pattern
+js:
+  # JS that should be loaded early in the page (head, or embedded).
+  early:
+    - ./test-early.js
+  # JS that can be (no guarantee) loaded late on the page (footer, require-js, etc).
+  deferred:
+    - ./test-late.js
+    - http://10.254.254.254:8080/vendor/pattern-builder/pattern-kit/resources/library/patterns/cta_band/assets/test-external.js
+#  shared:
+#    - name:
+#      src:

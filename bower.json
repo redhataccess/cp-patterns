@@ -21,7 +21,8 @@
   ],
   "dependencies": {
     "rh-iconfont": "https://gitlab.it-mkt.corpdev.redhat.com/it-marketing/rh-iconfont.git",
-    "webcomponentsjs": "^1.0.3"
+    "webcomponentsjs": "^1.0.3",
+    "polymer": "^2.0"
   },
   "devDependencies": {
     "compass-breakpoint": "~2.5.0",

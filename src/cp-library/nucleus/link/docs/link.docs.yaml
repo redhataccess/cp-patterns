@@ -1,0 +1,5 @@
+name: link
+linktext: yeehaw, default linktext
+linkhref: http://google.com
+linktarget: _self
+linktitle: this is a link

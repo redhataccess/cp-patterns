@@ -44,16 +44,18 @@ module.exports = function (grunt) {
         'sass', // sass
         'autoprefixer:dev', // sass
         'concat', // js
-        'modernizr:dist', // sass
+        'modernizr:dist' // sass
     ]);
 
     // Default task compiles a distributable copy of the repo
     grunt.registerTask('cp', [
-        'clean', // files
+        //'clean', // files
+        'default', // Run default first.
         'copy:cp_templates', // files
         'copy:cp_data', // files
         'copy:cp_schemas', // files
         'copy:cp_images', // files
+        'copy:cp_assets', // files
         'jsonlint', // js
         'jshint', // js
         'bower_concat', // js
@@ -61,7 +63,7 @@ module.exports = function (grunt) {
         'sass', // sass
         'autoprefixer:dev', // sass
         'concat', // js
-        'modernizr:dist', // sass
+        'modernizr:dist' // sass
     ]);
 
 
@@ -76,7 +78,7 @@ module.exports = function (grunt) {
         'sass', // sass
         'autoprefixer:dev', // sass
         'concat', // js
-        'modernizr:dist', // sass
+        'modernizr:dist' // sass
     ]);
 
     grunt.registerTask('watcher', [
