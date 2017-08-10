@@ -14,8 +14,7 @@ $ docker-compose up
 
 By default, the container will listen on [localhost](http://localhost:8080/) port **8080**. If you would like to change that, set the **PK_LISTEN_PORT** environment variable.
 ```
-$ PK_LISTEN_PORT=9993
-$ docker-compose up
+$ PK_LISTEN_PORT=9993 docker-compose up
 ```
 
 When it completes, open another terminal and run `init.sh`
